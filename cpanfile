@@ -4,6 +4,6 @@ on test => sub {
 
 on runtime => sub {
     requires 'Moo';
-    requires 'Type::Tiny';
+    requires 'Type::Tiny' => '1.012000';
     requires 'URI';
 };

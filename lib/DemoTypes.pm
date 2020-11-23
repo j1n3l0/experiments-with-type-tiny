@@ -1,8 +1,8 @@
 package DemoTypes;
 
-use Type::Library -base, -declare => qw< PathlessUri >;
-use Type::Utils -all;
-use Types::Standard -types;
+use Type::Library -base, -utils,
+    -extends => [ 'Types::Standard' ],
+    -declare => qw< PathlessUri >;
 
 declare PathlessUri, as class_type('URI'), where {
     !grep { length $_ } $_->path_segments()
